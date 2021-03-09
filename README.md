@@ -1,3 +1,3 @@
 # Lyric Me This
 
-My fisrt app, so go easy on me
+My first app, so go easy on me
