@@ -3,7 +3,12 @@
 {% block content %}
 
     <div class="wrapper">
-        <input type="hidden" value="{% url 'posts:songs' %}">
+        <form method="post">
+            {% csrf_token %}
+            <p>Are you sure you want to delete {{ song.title }}?</p>
+            <button type="submit">Yes</button>
+            <a href="../">No</a>
+        </form>
     </div>
 
 {% endblock content %}

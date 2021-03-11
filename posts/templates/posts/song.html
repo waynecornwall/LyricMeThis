@@ -9,7 +9,7 @@
             <h5>{{ song.author.username.title }} | {{ song.date_posted|date:'f d, Y' }}</h5>
             <p>{{ song.lyrics|linebreaks }}</p>
             <p><a href="{% url 'posts:edit_song' song.id %}">Edit song</a></p>
-{#            <p><a href="{% url 'posts:delete_song' song.id %}">Delete song</a></p>#}
+            <p><a href="{% url 'posts:delete_song' song.id %}">Delete song</a></p>
         </div>
     </div>
 

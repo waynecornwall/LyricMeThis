@@ -2,18 +2,18 @@
 
 {% block content %}
     <div class="wrapper">
-    <p><a href="{% url 'posts:new_song' %}">Add a new</a></p>
-    <p>
-        {% if song_count == 0 %}
-            <p>No songs have been added yet</p>
-        {% else %}
-            <p>You have {{ song_count }} songs</p>
-        {% endif %}
-    </p>
-        <ul>
-            {% for song in all_songs %}
-                <li><a href="{% url 'posts:song' song.id %}">{{ song.title }}</a></li>
-            {% endfor %}
-        </ul>
+        <p><a href="{% url 'posts:new_song' %}">Add a new</a></p>
+            {% if song_count == 0 %}
+                <p>No songs have been added yet</p>
+            {% elif song_count == 1 %}
+                <p>You have {{ song_count }} song</p>
+            {% else %}
+                <p>You have {{ song_count }} songs</p>
+            {% endif %}
+            <ul>
+                {% for song in all_songs %}
+                    <li><a href="{% url 'posts:song' song.id %}">{{ song.title }}</a></li>
+                {% endfor %}
+            </ul>
     </div>
 {% endblock content %}

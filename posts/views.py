@@ -85,17 +85,17 @@ def edit_song(request, song_id):
     return render(request, 'posts/edit_song.html', context)
 
 
-# @login_required
-# def delete_song(request, song_id):
-#     songs = Song.objects.all()
-#     for song in songs:
-#         if song.author != request.user:
-#             raise Http404
-#         if song_id == song.id:
-#             del song
-#             return redirect('posts:songs')
-#     context = {
-#         'songs' : songs
-#     }
-#     return render(request, 'posts/delete_song.html', context)
+@login_required
+def delete_song(request, song_id):
+    song = Song.objects.get(id=song_id)
+    if song.author != request.user:
+        raise Http404
+    if request.method == 'POST':
+        if song_id == song.id:
+            song.delete()
+            return redirect('posts:songs')
+    context = {
+        'song' : song
+    }
+    return render(request, 'posts/delete_song.html', context)
 
