@@ -8,12 +8,24 @@
 </head>
 <body>
 <header>
-
+    <div class="wrapper">
+        <h1>Lyric Me This</h1>
+        <p>Hello {{ user.username.title }}</p>
+    </div>
+    <div class="wrapper">
+        <ul>
+            <li><a href="{% url 'posts:index' %}">Home</a></li>
+            <li><a href="{% url 'posts:songs' %}">Songs</a></li>
+            <li><a href="#">Log out</a></li>
+            <li><a href="#">Log In</a></li>
+            <li><a href="#">Register</a></li>
+        </ul>
+    </div>
 </header>
 
 {% block content %}
 {% endblock content %}
 
-<footer></footer>
+<footer><h6>Lyric Me This &copy; Copyright 2021</h6></footer>
 </body>
 </html>

@@ -18,5 +18,8 @@ urlpatterns = [
     path('new_song/', views.new_song, name='new_song'),
 
     # ...edit song page
-    path('edit_song/<int:song_id>', views.edit_song, name='edit_song')
+    path('edit_song/<int:song_id>', views.edit_song, name='edit_song'),
+
+    # ...delete song page
+    # path('delete_song/<int:song_id>', views.delete_song, name='delete_song')
 ]

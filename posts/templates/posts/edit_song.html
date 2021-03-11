@@ -1,4 +1,17 @@
 {% extends 'posts/base.html' %}
 
 {% block content %}
+
+    <div class="wrapper">
+        <p><a href="{% url 'posts:song' song.id %}">Back to {{ song.title }}</a></p>
+        <form method="post" action="{% url 'posts:edit_song' song.id %}">
+            {% csrf_token %}
+            <p>Title</p>
+            {{ form.title }}
+            <p>Lyrics</p>
+            {{ form.lyrics }}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
 {% endblock content %}
