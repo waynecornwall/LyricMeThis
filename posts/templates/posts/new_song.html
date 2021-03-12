@@ -2,16 +2,18 @@
 
 {% block content %}
 
-    <div class="wrapper">
-        <p><a href="{% url 'posts:songs' %}">Back to songs</a></p>
-        <form method="post" action="{% url 'posts:new_song' %}">
-            {% csrf_token %}
-            <p>Title</p>
-            {{ form.title }}
-            <p>Lyrics</p>
-            {{ form.lyrics }}
-            <button type="submit">Add</button>
-        </form>
-    </div>
+    <section id="new-song">
+        <div class="wrapper">
+            <p>[ <a href="{% url 'posts:songs' %}">Back to songs</a> ]</p>
+            <form method="post" action="{% url 'posts:new_song' %}">
+                {% csrf_token %}
+                <p>Title</p>
+                {{ form.title }}
+                <p>Lyrics</p>
+                {{ form.lyrics }}
+                <button type="submit">Add song</button>
+            </form>
+        </div>
+    </section>
 
 {% endblock content %}

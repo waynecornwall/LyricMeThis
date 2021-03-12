@@ -3,29 +3,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'posts/css/styles.css' %}">
     <title>Title</title>
 </head>
 <body>
 <header>
     <div class="wrapper">
-        <h1>Lyric Me This</h1>
-        <p>Hello {{ user.username.title }}</p>
-    </div>
+        <h1><span id="header-lyric">Lyric</span> Me This</h1>
+        {% if user.is_authenticated %}
+            <p>Hello {{ user.username.title }}</p>
+        {% endif %}
+    </div> <!-- end of wrapper div -->
+</header>
+<nav id="nav-bar">
     <div class="wrapper">
         <ul>
             <li><a href="{% url 'posts:index' %}">Home</a></li>
-            <li><a href="{% url 'posts:songs' %}">Songs</a></li>
-            <li><a href="#">Log out</a></li>
-            <li><a href="#">Log In</a></li>
-            <li><a href="#">Register</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'posts:songs' %}">Songs</a></li>
+                <li><a href="{% url 'users:logout' %}">Log out</a></li>
+            {% else %}
+                <li><a href="{% url 'users:login' %}">Log In</a></li>
+                <li><a href="{% url 'users:register' %}">Register</a></li>
+            {% endif %}
         </ul>
-    </div>
-</header>
+    </div> <!-- end of wrapper div -->
+</nav>
+<div style="clear: both"></div>
 
 {% block content %}
 {% endblock content %}
 
-<footer><h6>Lyric Me This &copy; Copyright 2021</h6></footer>
+<footer><div class="wrapper"><h6>Lyric Me This &copy; Copyright 2021</h6></div></footer>
 </body>
 </html>

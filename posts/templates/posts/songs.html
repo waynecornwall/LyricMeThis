@@ -1,19 +1,25 @@
 {% extends 'posts/base.html' %}
 
 {% block content %}
-    <div class="wrapper">
-        <p><a href="{% url 'posts:new_song' %}">Add a new</a></p>
+    <section id="songs">
+        <div class="wrapper">
+            <p>[ <a href="{% url 'posts:new_song' %}">Add a new song</a> ]</p>
+
             {% if song_count == 0 %}
                 <p>No songs have been added yet</p>
             {% elif song_count == 1 %}
-                <p>You have {{ song_count }} song</p>
+                <p><small>Song count: {{ song_count }}</small></p>
             {% else %}
-                <p>You have {{ song_count }} songs</p>
+                <p><small>Song count: {{ song_count }}</small></p>
             {% endif %}
-            <ul>
+
+            <div id="songs-list" class="wrapper">
                 {% for song in all_songs %}
-                    <li><a href="{% url 'posts:song' song.id %}">{{ song.title }}</a></li>
+                    <p>[ <a href="{% url 'posts:song' song.id %}">{{ song.title }}</a> ]</p>
                 {% endfor %}
-            </ul>
-    </div>
+            </div>
+
+
+        </div>
+    </section>
 {% endblock content %}

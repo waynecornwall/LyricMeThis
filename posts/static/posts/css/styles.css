@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Helevetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.wrapper {
+    max-width: 60%;
+    margin: auto;
+}
+
+header {
+    background-color: rebeccapurple;
+}
+
+header h1{
+    padding: 20px 0;
+    text-transform: uppercase;
+    color: mediumpurple;
+}
+
+@media (max-width: 786px) {
+    .wrapper {
+        max-width: 97%;
+        margin: auto;
+    }
+
+    header {
+        background-color: rebeccapurple;
+    }
+
+    header h1 {
+        padding: 20px 0;
+        text-transform: uppercase;
+        color: mediumpurple;
+        font-size: 1.6em;
+        text-align: center;
+    }
+
+    header p {
+        padding:0 0 10px 10px;
+        color: lightgrey;
+    }
+
+    #header-lyric {
+        color: lightgrey;
+    }
+
+    #nav-bar ul {
+        padding:5px 10px;
+        list-style: none;
+    }
+
+    #nav-bar li {
+        float: left;
+        margin:20px 20px 20px 0;
+    }
+
+    #nav-bar a {
+        text-transform: none;
+    }
+
+    #songs-list p {
+        font-size: 1.5em;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    #song-wrapper {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    #song-wrapper h2 {
+        color: rebeccapurple;
+        margin-bottom: 10px;
+    }
+
+    #song-wrapper h5 {
+        margin-bottom: 10px;
+    }
+
+    #song-wrapper-btns {
+        margin-top: 10px;
+    }
+
+    #song-wrapper-btns p {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    #new-song form,
+    #edit-song form,
+    #login form,
+    #register form {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    #edit-song textarea,
+    #new-song textarea {
+        font-family: Helevetica, sans-serif;
+    }
+
+    #new-song input,
+    #new-song textarea,
+    #edit-song input,
+    #edit-song textarea,
+    #login input,
+    #register input {
+        width: 90%;
+        padding: 5px;
+        margin-bottom: 20px;
+    }
+
+    #new-song button,
+    #edit-song button,
+    #login button,
+    #register button,
+    #delete-song button,
+    #delete-song a {
+        background: rebeccapurple;
+        border: none;
+        color: white;
+        padding: 5px;
+        font-size: 1em;
+        border-radius: 2px;
+    }
+
+    #new-song button:hover,
+    #edit-song button:hover,
+    #login button:hover,
+    #register button:hover,
+    #delete-song button:hover,
+    #delete-song a:hover {
+        outline: 1px solid rebeccapurple;
+        background: none;
+        color: rebeccapurple;
+    }
+
+    .mini-message {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    #delete-song p {
+        margin-bottom: 20px;
+    }
+
+    #logout {
+        text-align: center;
+        font-size: 1em;
+    }
+
+    footer {
+        text-align: center;
+        color: rebeccapurple;
+        margin-top: 20px;
+    }
+}
+

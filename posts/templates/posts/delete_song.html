@@ -2,13 +2,15 @@
 
 {% block content %}
 
-    <div class="wrapper">
-        <form method="post">
-            {% csrf_token %}
-            <p>Are you sure you want to delete {{ song.title }}?</p>
-            <button type="submit">Yes</button>
-            <a href="../">No</a>
-        </form>
-    </div>
+    <section id="delete-song">
+        <div class="wrapper">
+            <form method="post">
+                {% csrf_token %}
+                <p>Are you sure you want to delete {{ song.title }}?</p>
+                <button type="submit">Yes</button>
+                <a href="../">No</a>
+            </form>
+        </div>
+    </section>
 
 {% endblock content %}

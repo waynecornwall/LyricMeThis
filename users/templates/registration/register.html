@@ -1,0 +1,22 @@
+{% extends 'posts/base.html' %}
+
+{% block content %}
+
+    <section id="register">
+        <div class="wrapper">
+            <form method="post" action="{% url 'users:register' %}">
+                {% csrf_token %}
+                <p>Username</p>
+                {{ form.username }}
+                <p>Password</p>
+                {{ form.password1 }}
+                <p>Confirm Password</p>
+                {{ form.password2 }}
+                <button type="submit">Register</button>
+                <input type="hidden" name="submit" value="{% url 'users:login' %}">
+            </form>
+            <p class="mini-message"><small>Already have an account? <a href="{% url 'users:login' %}">Log In</a></small></p>
+        </div>
+    </section>
+
+{% endblock content %}
